@@ -1,0 +1,20 @@
+.product-table {
+ width: 100%;
+ border-collapse: collapse;
+
+ th,
+ td {
+  border: 1px solid var(--color-border);
+  padding: 10px;
+  text-align: left;
+ }
+
+ th {
+  background: var(--color-gray);
+  color: var(--color-white);
+ }
+
+ tr:hover {
+  background: #f9f9f9;
+ }
+}

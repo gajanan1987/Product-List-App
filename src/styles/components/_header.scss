@@ -1,0 +1,15 @@
+.header-nav {
+ display: flex;
+ align-items: center;
+ padding: 10px 15px;
+ background-color: #c1deff;
+ position: sticky;
+ top: 0;
+ border-bottom: 1px solid var(--color-border);
+ z-index: 999;
+ margin-bottom: 16px;
+
+ a {
+  color: var(--color-primary);
+ }
+}

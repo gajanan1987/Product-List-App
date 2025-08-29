@@ -1,0 +1,80 @@
+:root {
+	font-size: 100%;
+}
+
+body {
+	font-display: auto;
+	-webkit-overflow-scrolling: touch;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	scroll-behavior: smooth;
+	color: var(--color-text);
+	@include Font-Medium;
+	font-size: 16px;
+
+	@include mq("t-768", "max") {
+		font-size: 14px;
+	}
+}
+
+a {
+	text-decoration: none;
+	cursor: pointer;
+	color: var(--color-link);
+
+	&:focus,
+	&:hover,
+	&:active {
+		outline: none;
+	}
+}
+
+
+.table-reponsive {
+	overflow-x: hidden;
+
+	@include mq("t-768", "max") {
+		margin-right: -15px;
+		overflow-x: scroll;
+	}
+}
+
+table {
+	table-layout: fixed;
+	border-collapse: collapse;
+	width: 100%;
+	margin-bottom: 16px;
+
+	@include mq("t-768", "max") {
+		margin-bottom: 0px;
+		display: block;
+		max-width: -moz-fit-content;
+		max-width: fit-content;
+	}
+}
+
+td,
+th {
+
+	@include mq("t-768", "max") {
+		min-width: 100px;
+		font-size: 12px;
+		line-height: 1.5;
+		letter-spacing: normal;
+	}
+}
+
+th {
+	line-height: 1.14;
+	letter-spacing: 0.51px;
+	text-transform: uppercase;
+	background-color: var(--color-light-pink);
+	white-space: nowrap;
+
+	@include mq("t-768", "max") {
+		padding: 14px;
+		font-size: 12px;
+		line-height: 1.33;
+		letter-spacing: 0.44px;
+	}
+}

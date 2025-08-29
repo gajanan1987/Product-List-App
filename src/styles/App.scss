@@ -1,0 +1,16 @@
+@import "./utilities/utilities-dir";
+@import "./components/componenet-dir";
+
+@import "./productList";
+
+.home {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ flex-direction: column;
+ min-height: 80vh;
+
+ h1 {
+  margin-bottom: 24px;
+ }
+}
