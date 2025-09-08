@@ -7,14 +7,6 @@ const ProductList = lazy(() => import("./features/product/ProductList"));
 
 export default function App() {
   return (
-<<<<<<< HEAD
-    <Routes>
-      <Route path="/home" element={<Home />} />
-      <Route path="/" element={<Home />} />
-      <Route path="/product-list" element={<ProductList />} />
-      <Route path="*" element={<h1>Page Not Found</h1>} />
-    </Routes>
-=======
     <Suspense fallback="Loading.....">
       <Routes>
         <Route path="/home" element={<Home />} />
@@ -23,6 +15,5 @@ export default function App() {
         <Route path="*" element={<h2>Page Not Found</h2>} />
       </Routes>
     </Suspense>
->>>>>>> d4d7843 (new)
   );
 }
