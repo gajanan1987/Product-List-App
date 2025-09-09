@@ -6,6 +6,7 @@ const Header = () => {
       <NavLink className="logo" to="/home" exact="true">
         Product List App
       </NavLink>
+      <NavLink to="/project">project</NavLink>
     </nav>
   );
 };
