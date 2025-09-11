@@ -1,7 +1,6 @@
 import React from "react";
 
 const BackLog = ({ tasks, backBtn, nextBtn }) => {
-  console.log("🚀 ~ BackLog ~ tasks:", tasks);
   return (
     <div>
       <h3>BackLog</h3>

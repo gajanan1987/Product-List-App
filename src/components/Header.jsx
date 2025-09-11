@@ -4,7 +4,7 @@ const Header = () => {
   return (
     <nav className="header-nav">
       <NavLink className="logo" to="/home" exact="true">
-        Product List App
+        Home
       </NavLink>
       <NavLink to="/project">project</NavLink>
     </nav>

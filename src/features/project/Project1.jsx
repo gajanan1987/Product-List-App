@@ -3,27 +3,25 @@ import Todo from "./components/Todo";
 import Ongoing from "./components/Ongoing";
 import Done from "./components/Done";
 import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { right, left } from "../../redux/projectSlice";
 
-const Project1 = ({ tasks }) => {
-  const [updateTask, setupdateTask] = useState(tasks);
+const Project1 = () => {
+  const dispatch = useDispatch();
+  const { tasks } = useSelector((state) => state.project);
+
   const backBtn = (s) => {
-    const op = updateTask.map((item) => {
-      return item.task == s ? { ...item, status: item.status - 1 } : item;
-    });
-    setupdateTask(op);
+    dispatch(left(s));
   };
   const nextBtn = (s) => {
-    const op = updateTask.map((item) => {
-      return item.task == s ? { ...item, status: item.status + 1 } : item;
-    });
-    setupdateTask(op);
+    dispatch(right(s));
   };
   return (
     <div className="project-wrapper">
-      <BackLog tasks={updateTask} backBtn={backBtn} nextBtn={nextBtn} />
-      <Todo tasks={updateTask} backBtn={backBtn} nextBtn={nextBtn} />
-      <Ongoing tasks={updateTask} backBtn={backBtn} nextBtn={nextBtn} />
-      <Done tasks={updateTask} backBtn={backBtn} nextBtn={nextBtn} />
+      <BackLog tasks={tasks} backBtn={backBtn} nextBtn={nextBtn} />
+      <Todo tasks={tasks} backBtn={backBtn} nextBtn={nextBtn} />
+      <Ongoing tasks={tasks} backBtn={backBtn} nextBtn={nextBtn} />
+      <Done tasks={tasks} backBtn={backBtn} nextBtn={nextBtn} />
     </div>
   );
 };
