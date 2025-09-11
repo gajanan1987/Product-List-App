@@ -37,17 +37,15 @@ const productsSlice = createSlice({
       })
       .addCase(fetchProducts.rejected, (state, action) => {
         state.loading = false;
-        state.error = action.error.message;
+        state.error = action.payload || action.error.message;
       });
   },
 });
 
-export const selectProducts = (state) => state.products;
-export const selectLoading = (state) => state.products.loading;
-export const selectError = (state) => state.products.error;
+export const selectProductsState = (state) => state.products;
 
 export const selectSortedProducts = createSelector(
-  [selectProducts, (_, sortOrder) => sortOrder],
+  [selectProductsState, (_, sortOrder) => sortOrder],
   (state, sortOrder) => {
     if (!sortOrder) return state.items;
     return [...state.items].sort((a, b) =>

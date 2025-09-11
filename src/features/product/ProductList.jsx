@@ -17,8 +17,8 @@ const ProductList = () => {
   );
 
   useEffect(() => {
-    dispatch(fetchProducts());
-  }, [dispatch]);
+    if (!items.length) dispatch(fetchProducts());
+  }, [dispatch, items.length]);
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error}</p>;
